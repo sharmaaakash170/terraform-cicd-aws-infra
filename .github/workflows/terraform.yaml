@@ -21,7 +21,7 @@ jobs:
 
       - name: Setup Terraform 
         uses: hashicorp/setup-terraform@v3 
-        
+
       - name: Ensure backend bucket exists
         run: |
           aws s3api head-bucket --bucket terraform-cicd-aws-infra-s3-bucket || \
@@ -42,3 +42,7 @@ jobs:
       - name: Terraform Apply 
         working-directory: environments/dev
         run: terraform apply -auto-approve -input=false -var-file="dev.tfvars"
+      
+      - name: Terraform Clean up  
+        working-directory: environments/dev
+        run: terraform destroy -auto-approve -input=false -var-file="dev.tfvars"
