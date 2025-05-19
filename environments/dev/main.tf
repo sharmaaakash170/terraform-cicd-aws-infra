@@ -1,3 +1,5 @@
+#  VPC
+
 module "vpc" {
   source = "../../modules/vpc"
   availability_zone = var.availability_zone
@@ -7,11 +9,15 @@ module "vpc" {
   tags = var.tags
 }
 
+# S3
+
 module "s3" {
   source       = "../../modules/s3"
   project_name = var.project_name
   tags         = var.tags
 }
+
+# EC2
 
 module "ec2" {
   source        = "../../modules/ec2"
