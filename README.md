@@ -6,7 +6,7 @@ This project demonstrates a complete Infrastructure as Code (IaC) workflow using
 
 ## 📌 Project Overview
 
-- Provision an **S3 bucket**, **VPC** and an **EC2 instance**
+- Provision an **EC2 instance**
 - Use **Terraform modules** for reusability and structure
 - CI/CD pipeline via **GitHub Actions** on every push to `main`
 
@@ -14,9 +14,9 @@ This project demonstrates a complete Infrastructure as Code (IaC) workflow using
 
 ## 🔧 Infrastructure Components
 
-- 🪣 AWS S3 bucket (with random name)
-- 🖥️ AWS EC2 instance (t2.micro)
-- 📦 Remote backend for Terraform state (optional)
+- 🪣 AWS S3 bucket
+- 🖥️ AWS EC2 instance
+- 📦 Remote backend for Terraform state
 - ⚙️ GitHub Actions CI/CD workflow
 
 ---
@@ -26,7 +26,6 @@ This project demonstrates a complete Infrastructure as Code (IaC) workflow using
 ```
 terraform-cicd-aws/
 ├── modules/
-│   ├── s3/
 │   ├── vpc/
 │   └── ec2/
 ├── environments/
