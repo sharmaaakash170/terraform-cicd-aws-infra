@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "${var.project_name}-s3-bucket"
+    bucket = "terraform-cicd-aws-infra-s3-bucket"
     key = "dev/terraform.tfstate"
-    region = var.aws_region
+    region = "us-east-1"
   }
 }
